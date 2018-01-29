@@ -6,7 +6,7 @@ import AdminWatchlist from './AdminWatchlist';
 import { CustomEventsEditor } from './CustomEventsEditor';
 import TrustedSources from './TrustedSources';
 import BlacklistEditor from './BlacklistEditor';
-import StreamEditor from './StreamEditor';
+import StreamEditor from './Streams/StreamEditor';
 import UserRoles from './UserRoles';
 import FontIcon from 'material-ui/FontIcon';
 import ReactTooltip from 'react-tooltip'
@@ -132,7 +132,6 @@ class Admin extends React.Component {
                       </div>
                     </TabPanel>
                     <TabPanel>
-                      <h2>Streams</h2>
                       <div className="adminTable">
                         {this.props.settings && this.props.settings.properties && this.state.index === STREAM_TAB &&
                           <StreamEditor {...this.props}/>}

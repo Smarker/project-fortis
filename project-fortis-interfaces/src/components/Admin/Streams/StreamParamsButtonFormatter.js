@@ -1,7 +1,8 @@
 import React from 'react';
-import { DataGrid } from './DataGrid';
+import { DataGrid } from '../DataGrid';
 import { Glyphicon, Button, Modal } from 'react-bootstrap';
-import { getColumns } from './shared';
+import { getColumns } from '../shared';
+import IconButton from 'material-ui/IconButton';
 
 class StreamParamsButtonFormatter extends React.Component {
   constructor(props) {
@@ -71,9 +72,12 @@ class StreamParamsButtonFormatter extends React.Component {
   render() {
     return (
       <div>
-        <Button id={this.props.dependentValues.streamId} onClick={this.handleShowDetails} bsStyle="primary" bsSize="xsmall">
-          <Glyphicon glyph="edit" /> Edit
-        </Button>
+        <IconButton 
+          id={this.props.dependentValues.streamId}
+          onClick={this.handleShowDetails}
+          iconClassName="material-icons">
+          mode_edit
+        </IconButton>
         <Modal show={this.state.isShowDetailOn} onHide={this.handleHideDetails}>
           <Modal.Header closeButton>
             <Modal.Title>Parameters for {this.props.dependentValues.pipelineLabel}</Modal.Title>

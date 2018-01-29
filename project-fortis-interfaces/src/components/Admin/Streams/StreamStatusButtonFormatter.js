@@ -1,16 +1,16 @@
 import React from 'react';
-import { Glyphicon, Button } from 'react-bootstrap';
+import FlatButton from 'material-ui/FlatButton';
 
 const enableButtonStyle = {
   glyph: "ok",
   text: "enabled",
-  buttonColor: "success"
+  disabled: false
 };
 
 const disableButtonStyle = {
   glyph: "remove",
   text: "disabled",
-  buttonColor: "danger"
+  disabled: true
 };
 
 class StreamStatusButtonFormatter extends React.Component {
@@ -102,12 +102,16 @@ class StreamStatusButtonFormatter extends React.Component {
   render() {
     return (
       <div>
-        <Button id={this.props.dependentValues.streamId} bsStyle={this.state.buttonStyle.buttonColor} bsSize="xsmall" onClick={this.toggleState}>
-          <Glyphicon glyph={this.state.buttonStyle.glyph} /> {this.state.buttonStyle.text}
-        </Button>
+        <FlatButton id={this.props.dependentValues.streamId} label={this.state.buttonStyle.text} secondary={this.state.buttonStyle.disabled} onClick={this.toggleState}/>
       </div>
     );
   }
 }
+
+/*
+<Button id={this.props.dependentValues.streamId} bsStyle={this.state.buttonStyle.buttonColor} bsSize="xsmall" onClick={this.toggleState}>
+          <Glyphicon glyph={this.state.buttonStyle.glyph} /> {this.state.buttonStyle.text}
+        </Button>
+*/
 
 export default StreamStatusButtonFormatter;

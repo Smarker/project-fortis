@@ -6,7 +6,6 @@ import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
-import { CLIENT_RENEG_LIMIT } from 'tls';
 
 const streams = [
   'Bing',

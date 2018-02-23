@@ -97,7 +97,7 @@ install_spark() {
     --set Master.Resources.Limits.Cpu="2" \
     --set Master.Resources.Limits.Memory="5Gi" \
     --set Worker.Environment[0].name="SPARK_WORKER_MEMORY",Worker.Environment[0].value="20g" \
-    --set Worker.Environment[1].name="SPARK_WORKER_OPTS",Worker.Environment[1].value="-Dspark.worker.cleanup.enabled=true -Dspark.worker.cleanup.interval=1800 -Dspark.worker.cleanup.appDataTtl=3600" \
+    --set Worker.Environment[1].name="SPARK_WORKER_OPTS",Worker.Environment[1].value="-Dspark.worker.cleanup.enabled=false" \
     --namespace spark \
     --name spark-cluster \
     ./spark
